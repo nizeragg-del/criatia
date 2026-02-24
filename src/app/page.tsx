@@ -23,7 +23,10 @@ export default async function Home() {
     <main>
       <nav className="navbar">
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Link href="/" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--primary)' }}>Flowyn</Link>
+          <Link href="/" className="logo-container">
+            <div className="logo-symbol">F</div>
+            <span className="logo-text">Flowyn<span className="logo-dot">.</span></span>
+          </Link>
           <div style={{ display: 'flex', gap: '2rem' }}>
             <Link href="/">Início</Link>
             <Link href="/sobre">Sobre</Link>
