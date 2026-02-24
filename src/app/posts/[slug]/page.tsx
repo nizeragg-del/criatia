@@ -1,12 +1,14 @@
 import { supabase } from '@/lib/supabase'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import ReactMarkdown from 'react-markdown'
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
+export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params
     const { data: post } = await supabase
         .from('posts')
         .select('*')
-        .eq('slug', params.slug)
+        .eq('slug', slug)
         .single()
 
     if (!post) {
@@ -43,11 +45,8 @@ export default async function PostPage({ params }: { params: { slug: string } })
                         </div>
                     )}
 
-                    <div className="markdown-content" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
-                        {/* Aqui você usaria um componente de Markdown como react-markdown */}
-                        {post.content.split('\n').map((para: string, i: number) => (
-                            <p key={i} style={{ marginBottom: '1.5rem' }}>{para}</p>
-                        ))}
+                    <div className="markdown-content">
+                        <ReactMarkdown>{post.content}</ReactMarkdown>
                     </div>
                 </article>
             </div>
