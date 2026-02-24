@@ -17,7 +17,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
         <main>
             <nav className="navbar">
                 <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <Link href="/" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--primary)' }}>CriatIA</Link>
+                    <Link href="/" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--primary)' }}>Flowyn</Link>
                     <div style={{ display: 'flex', gap: '2rem' }}>
                         <Link href="/">Início</Link>
                         <Link href="/sobre">Sobre</Link>
@@ -50,7 +50,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
             </div>
 
             <footer style={{ padding: '4rem 0', borderTop: '1px solid var(--border)', textAlign: 'center', opacity: 0.6, fontSize: '0.9rem' }}>
-                <p>&copy; 2025 CriatIA - Powered by Intelligence</p>
+                <p>&copy; 2025 Flowyn - Powered by Intelligence</p>
             </footer>
         </main>
     )
